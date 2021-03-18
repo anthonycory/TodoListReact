@@ -1,8 +1,8 @@
 # TodoList React App
 
 ### Installation :
-Git clone
-npm install && npm start
+- Git clone https://github.com/anthonycory/TodoListReact.git <br>
+- npm install && npm start
 
 ## Available Scripts
 
