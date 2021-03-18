@@ -6,4 +6,4 @@
 - npm start
 
 ## Démonstration :
-
+<img src="https://via.placeholder.com/500">
