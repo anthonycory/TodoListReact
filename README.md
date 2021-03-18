@@ -1,4 +1,4 @@
-# TodoList React App
+# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"> TodoList React App
 
 ### Installation :
 - Git clone https://github.com/anthonycory/TodoListReact.git <br>
@@ -6,4 +6,4 @@
 - npm start
 
 ## Démonstration :
-<img src="https://via.placeholder.com/500">
+
