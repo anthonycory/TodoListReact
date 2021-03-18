@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { MdDeleteSweep } from 'react-icons/md';
 
 class Todolist extends Component {
     constructor() {
@@ -19,6 +20,9 @@ class Todolist extends Component {
         this.setState ({
             items: [...this.state.items, this.state.value]
         });
+        this.setState({
+            value: ""
+        })
     }
 
     deleteTodo(item) {
@@ -30,29 +34,32 @@ class Todolist extends Component {
         });
     }
 
-    renderTodo() {
-        return this.state.items.map((item) => {
-            return (
-                <div key={item}>
-                    {item} | <button onClick={this.deleteTodo.bind(this, item)}>X</button>
-                </div>
-            );
-        });
-    }
     render() {
         return (
-            <div>
-                <h1>Ma todo List</h1>
-                <form>
-                    <input type="text" placeholder="name" value={this.state.value} onChange={this.onChange.bind(this)} />
-                    <button onClick={this.addTodo.bind(this)}>
-                        Ajouter
-                    </button>
-                </form>
-                <div>
-                    {this.renderTodo()} 
+            <React.Fragment>
+                <div className="container">
+                    <form>
+                        <div className="form-group">
+                            <label for="formGroupExampleInput" style={{color: "white", fontSize: 40}}>Todo</label><br></br>
+                            <div style={{display: "flex"}}>
+                                <input type="text" class="form-control" placeholder="Todo" value={this.state.value} onChange={this.onChange.bind(this)} />
+                                <button type="button" class="btn btn-success" onClick={this.addTodo.bind(this)} style={{marginLeft: 10}}>Ajouter</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <br></br>
+                    {this.state.items.map((todo) => {
+                        return (
+                            <div class="alert alert-success"  key={todo}>
+                                <li>{todo}</li>
+                                <button style={{border: "none", borderRadius: "5px"}} onClick={this.deleteTodo.bind(this, todo)}><MdDeleteSweep size={35} color="#ce5757" /></button>
+                            </div>
+                        )
+                    })} 
+                    </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
